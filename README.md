@@ -25,9 +25,9 @@ Then `cd Tooldocs`
 
 Use `npm run quick-start` to install dependencies, create a build and then start it! 🚀
 
-After that, visit http://localhost:3000/ and start practising!
+After that, visit http://localhost:3000/ and start exploring the features!
 
 ## Demo
-![homepage](readme_images/home.PNG?raw=true)
-![filter quizzes](readme_images/filter.PNG?raw=true)
-![quiz](readme_images/quiz.PNG?raw=true)
+![homepage](readme_images/home.png?raw=true)
+![filter tools](readme_images/filter.png?raw=true)
+![docs](readme_images/docs.png?raw=true)
