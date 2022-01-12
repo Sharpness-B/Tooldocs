@@ -31,16 +31,7 @@ const QuizList = () => {
   const [, quizDispatch] = useContext(QuizContext);
 
   const onQuizClick = (x, icon) => {
-    const json = require(`./topics/${x.file}`);
-    quizDispatch({
-      type: SET_QUIZ,
-      payload: {
-        quizName: x.quiz_name,
-        quizData: json,
-        icon
-      }
-    });
-    Router.push('/quiz');
+    Router.push(`/${encodeURI(x.tool_name)}`);
   };
 
   
@@ -51,18 +42,18 @@ const QuizList = () => {
       <Box mt={3}>
         <Grid container spacing={3}>
           {topics.map((x) => {
-            const img = `/assets/img/logo/${x.img}`;
+            const icon = `/assets/img/${x.icon}`;
             return (
               <Grid item xs={12} sm={6} md={4} lg={3}  key={x.id}>
-                <Paper className={classes.paper} onClick={() => onQuizClick(x, img)}>
+                <Paper className={classes.paper} onClick={() => onQuizClick(x, icon)}>
                   <div style={{
                     height: 100,
                     textAlign: "center"
                   }}>
                     <img
                       className="topic-logo"
-                      src={img}
-                      alt={x.quiz_name}
+                      src={icon}
+                      alt={x.tool_name}
                       style={{
                         maxHeight: 100, 
                         maxWidth: 120,
@@ -73,7 +64,7 @@ const QuizList = () => {
                       }}
                     />
                   </div>
-                  <p className={classes.text}>{x.quiz_name}</p>
+                  <p className={classes.text}>{x.tool_name}</p>
                 </Paper>
               </Grid>
             );
