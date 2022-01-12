@@ -6,7 +6,8 @@ import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 const CssTextField = withStyles({
     root: {
         borderRadius: '40px',
-        background: '#fff'
+        background: '#fff',
+        width: '22em'
     }
 })(OutlinedInput);
 
