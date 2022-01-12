@@ -10,11 +10,18 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
+  function compare( a, b ) {
+    if ( a.tool_name < b.tool_name ) return -1;
+    if ( a.tool_name > b.tool_name ) return 1;
+    return 0;
+  }
+
   switch (action.type) {
     case SET_TOPICS:
       return {
         ...state,
-        topics: action.payload,
+        topics: action.payload
+                      .sort(compare),
       };
     default:
       return { ...state };
