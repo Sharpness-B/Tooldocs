@@ -33,7 +33,10 @@ export default function Home() {
   const onSearchbarInputChange = (e) => {
     const val =e.target.value
     setSearchValue(val);
-    const newTopics = quizData.filter(x => x.quiz_name.toLowerCase().includes(val.toLowerCase()));
+    const newTopics = quizData.filter(x => 
+      x.tool_name.toLowerCase().includes(val.toLowerCase())
+      ||   x.text.toLowerCase().includes(val.toLowerCase())
+    );
     appDispatch({
       type: SET_TOPICS,
       payload: newTopics
@@ -50,16 +53,17 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Link The In</title>
+        <title>Tooldocs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main style={{textAlign: 'center', marginTop: "30px"}}>
         <Typography variant="h1" className={classes.title}>
-          Welcome to <b>Link The In!</b>
+          Welcome to <b>Tooldocs!</b>
         </Typography>
-        <div style={{textAlign: 'center'}}>
-          <SearchBar onChangeEvent={onSearchbarInputChange} value={searchValue} placeholder={"filter quizzes"} />
+        <p>An interface for Cegal SYSCO Toolbox. Say goodbye to <code>ctrl+f</code> in the docs pdf!</p>
+        <div>
+          <SearchBar onChangeEvent={onSearchbarInputChange} value={searchValue} placeholder={"search for related tools and functionality"} />
         </div>
 
         <Quiz />
