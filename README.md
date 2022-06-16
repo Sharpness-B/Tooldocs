@@ -31,3 +31,7 @@ After that, visit http://localhost:3000/ and start exploring the features!
 ![homepage](readme_images/home.png?raw=true)
 ![filter tools](readme_images/filter.png?raw=true)
 ![docs](readme_images/docs.png?raw=true)
+
+
+## Deployment on Azure
+https://nascentdigital.com/thoughts/how-to-deploy-next-js-without-vercel
